@@ -222,6 +222,8 @@ module.exports = function (grunt) {
     "substitute",
     "Substitute templates-localized.js and parameters in togetherjs.js",
     function () {
+      var gaAccount = grunt.option('ga-account') || vars.GA_ACCOUNT;
+      grunt.log.writeln("Using GA Account: " + gaAccount);
       // FIXME: I could use grunt.file.copy(..., {process: function (content, path) {}}) here
       var baseUrl = grunt.option("base-url") || ""; // baseURL to be entered by the user
       if (! baseUrl) {
@@ -237,7 +239,8 @@ module.exports = function (grunt) {
         __walkthrough_html__: grunt.file.read("togetherjs/walkthrough.html"),
         __baseUrl__: baseUrl,
         __hubUrl__: hubUrl,
-        __gitCommit__: gitCommit
+        __gitCommit__: gitCommit,
+        __gaAccount__: gaAccount
       };
 
       function substituteContent(content, s) {
