@@ -74,7 +74,7 @@
 
   var styleSheet = "/togetherjs/togetherjs.css";
 
-  var baseUrl = "";
+  var baseUrl = "http://cloud.walchweb.com/authoring/items/bower_components/togetherjs/dist";
   if (baseUrl == "__" + "baseUrl__") {
     // Reset the variable if it doesn't get substituted
     baseUrl = "";
