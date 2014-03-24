@@ -74,7 +74,7 @@
 
   var styleSheet = "/togetherjs/togetherjs.css";
 
-  var baseUrl = "http://ww0v.s3-website-us-east-1.amazonaws.com/authoring/items/bower_components/togetherjs/dist";
+  var baseUrl = "";
   if (baseUrl == "__" + "baseUrl__") {
     // Reset the variable if it doesn't get substituted
     baseUrl = "";
