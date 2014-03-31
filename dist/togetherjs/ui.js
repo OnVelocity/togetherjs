@@ -108,7 +108,7 @@ define(["require", "jquery", "util", "session", "templates", "templating", "link
       });
       return;
     }
-    var container = ui.container = $(templates["interface"]);
+    var container = ui.container = $(templates("interface"));
     assert(container.length);
     $("body").append(container);
     fixupAvatars(container);
@@ -1020,6 +1020,14 @@ define(["require", "jquery", "util", "session", "templates", "templating", "link
           windowing.show(popup);
         } else if (! popup.is(":visible")) {
           windowing.show(popup);
+        }
+        var notifyConfig = TogetherJS.config.get("autoCloseNotifications");
+        if (typeof notifyConfig === "number") {
+          notify = notifyConfig;
+        } else if (notifyConfig === false) {
+          notify = false;
+        } else if (notifyConfig === true) {
+          notify = 4000;
         }
         if (typeof notify == "number") {
           // This is the amount of time we're supposed to notify
