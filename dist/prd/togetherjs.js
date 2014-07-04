@@ -17,7 +17,7 @@
     // of the hub analytics
     enableAnalytics: false,
     // The code to enable (this is defaulting to a Mozilla code):
-    analyticsCode: "XX-XXXXXXXX-XX",
+    analyticsCode: "UA-35433268-28",
     // The base URL of the hub (gets filled in below):
     hubBase: null,
     // A function that will return the name of the user:
